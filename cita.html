@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cita.css">
+    <link rel="icon" href="fotos/FORSAS.PNG" >
+    <title>Generar cita</title>
+</head>
+<body>
+    <header>
+        <div class=" menu container">
+            <a href="#" class="Logo">FORZA SOLAR</a>
+            <input type="checkbox" id="menu">
+            <label for="Menu">
+
+                <img src="fotos/menu-btn.png" class ="menu-icono"alt="">
+            </label>
+
+            <nav class="Navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="procesoPanel.html">Proceso Panel</a></li>
+                    <li><a href="Contacto.html">Proceso Analisis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="contact">
+        <div class="u-wrapper">
+          <div class="contact-content">
+    
+            <form id="form" action="" class="form">
+              <h3 class="tag"><span>Mandanos tus datos</span></h3>
+              <label for="name">Nombre Completo <span>*</span></label>
+              <input name="name" required type="text" id="name" placeholder="nombre">
+              <label for="email">Correo electrónico <span>*</span></label>
+              <input name="email" type="text" id="email" required placeholder="correo@gmail.com">
+              <label for="fecha">Fecha de la cita</label>
+              <input name="fecha" type="date" id="fecha" required placeholder="Fecha">
+              <label for="lugar" >Selecciona tu zona</label>
+              <select name="lugar" id="lugar">
+                <option value="Monterrey">Monterrey</option>
+                <option value="Apodaca">Apodaca</option>
+                <option value="San Nicolas">San Nicolas</option>
+                <option value="Garcia">Garcia</option>
+                <option value="Juarez">Juarez</option>
+                <option value="Guadalupe">Guadalupe</option>
+                <option value="San Pedro">San Pedro</option>
+                <option value="Ciudad Victoria">Ciudad Victoria</option>
+                <option value="Santiago">Santiago</option>
+              </select>
+              <label for="numero"  id="numero">Numero de telefono</label>
+              <input name="numero" type="tel"  id="numero" required placeholder="Numero">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
+              <button type="submit" class="btn primary full">Enviar mensaje</button>
+            </form>
+            <a href="mailto:al43577@un.edu.mx" id="formularios"></a>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="Container">
+            <div class="info">
+                <div class="info-content">
+                    <div class="info-price">
+                        <h2>Buscanos</h2>
+                        <p>
+                            estamos en Hacienda del Bosque, Ciudad Victoria, Mexico, 87049
+                        </p>
+                        <p>
+                            Nuestro telefono es el siguiente:
+                        </p>
+                        <p> 81 134-71-3880</p>
+                     </div>
+                     <div class="info-text">
+                        <h2>Recuerda que queremos lo mejor para ti</h2>
+                        <p>
+                            No dudes en contactarnos en las diferentes redes sociales que tenemos para ti
+                        </p>
+                         
+                    </div>
+                </div>
+                <hr>
+                <div class="enlaces">
+                    <h3>BY SOFTGROUP</h3>
+                    <div class="enlace">
+                        <li><a href="https://www.facebook.com/profile.php?id=100088099014642">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/forzasolar/">Instagram</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const $form = document.querySelector('#form')
+        const $buttonMailto = document.querySelector('#formularios')
+    
+        $form.addEventListener('submit', handleSubmit)
+    
+        function handleSubmit(event) {
+          event.preventDefault()
+          const form = new FormData(this)
+          form: this.form
+          $buttonMailto.setAttribute('href', `mailto:al43577@un.edu.mx?subject=nombre ${form.get('name')}  correo ${form.get('email')} para el dia ${form.get('fecha')} desde ${form.get('lugar')} telefono ${form.get('numero')}  &body=${form.get('message')}`)
+          $buttonMailto.click(alert('¡Gracias por contactarte con nosotros!, responderemos a la brevedad'))
+          this.reset()
+          
+        }
+      </script>
+</body>
+</html>
